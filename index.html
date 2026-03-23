@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Split Bill Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>💸 Split Bill Calculator</h1>
+
+    <!-- Total Bill -->
+    <div class="section">
+      <label>Total Bill (₹)</label>
+      <input type="number" id="totalBill" placeholder="Enter amount">
+    </div>
+
+    <!-- Add People -->
+    <div class="section">
+      <label>Add Person</label>
+      <input type="text" id="personName" placeholder="Enter name">
+      <button onclick="addPerson()">Add</button>
+    </div>
+
+    <div id="peopleList"></div>
+
+    <!-- Split Type -->
+    <div class="section">
+      <label>Split Type</label>
+      <select id="splitType" onchange="updateSplit()">
+        <option value="equal">Equal</option>
+        <option value="custom">Custom</option>
+      </select>
+    </div>
+
+    <!-- Tip -->
+    <div class="section">
+      <label>Tip (%)</label>
+      <input type="range" id="tip" min="0" max="30" value="0" oninput="updateSplit()">
+      <span id="tipValue">0%</span>
+    </div>
+
+    <!-- Total -->
+    <h3 id="totalWithTip">Total Bill with Tip: ₹0</h3>
+
+    <!-- Results -->
+    <div id="results"></div>
+
+    <!-- Reset -->
+    <button onclick="resetAll()">Reset</button>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
